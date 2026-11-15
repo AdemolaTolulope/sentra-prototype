@@ -1,0 +1,25 @@
+name: Feature or improvement idea
+description: Suggest a thoughtful improvement to the senTRA prototype.
+title: "[Idea]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for sharing an idea! This is a synthetic prototype, not an operational healthcare service. Please do not include real patient or professional information, credentials or other sensitive details.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem or opportunity are you thinking about?
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: Describe your idea
+    validations:
+      required: true
+  - type: textarea
+    id: considerations
+    attributes:
+      label: Safety, privacy, accessibility or data considerations
+      description: Tell us about any limitations or risks that should be considered.

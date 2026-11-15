@@ -1,0 +1,38 @@
+name: Bug report
+description: Report a reproducible problem in the synthetic senTRA prototype.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve senTRA. Use fictional examples only. Do not include patient/professional information, passwords, tokens or other secrets. For sensitive security concerns, follow [SECURITY.md](https://github.com/AdemolaTolulope/sentra-prototype/blob/main/SECURITY.md).
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Describe the unexpected behaviour and the affected screen.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: "1. Open ...\n2. Choose ...\n3. Observe ..."
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect?
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Browser and device
+      placeholder: "For example: Chrome on Android"
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: A synthetic-only screenshot or error summary can help; remove private information and credentials.
