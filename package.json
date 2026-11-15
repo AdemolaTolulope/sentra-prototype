@@ -1,5 +1,6 @@
 {
   "name": "sentra-intelligence-foundation",
+  "description": "A synthetic health-intelligence and geospatial prototype for Nigeria.",
   "private": true,
   "version": "1.0.0",
   "type": "module",
