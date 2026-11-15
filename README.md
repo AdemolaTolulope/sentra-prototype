@@ -56,7 +56,7 @@ The screenshots include published map context; see [data and imagery attribution
 
 ## Run locally
 
-**Requirements:** Node.js 22 or newer, npm and a WebGL 2-capable browser. The frontend demonstrations run without API credentials.
+**Requirements:** Node.js 22 or newer, npm 9 or newer and a WebGL 2-capable browser. The frontend demonstrations run without API credentials.
 
 ```bash
 git clone https://github.com/AdemolaTolulope/sentra-prototype.git
