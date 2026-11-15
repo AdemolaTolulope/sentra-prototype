@@ -1,3 +1,4 @@
+# Dependencies, generated builds and disposable development data do not belong in Git.
 node_modules/
 dist/
 .stage4-production/
