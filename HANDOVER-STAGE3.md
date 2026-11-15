@@ -1,6 +1,6 @@
 # senTRA Stage 3 — REFLEX handover
 
-> Historical snapshot: this document describes Stage 3 at its review date. For the current MAMA-GUARD implementation, see [HANDOVER-STAGE4.md](HANDOVER-STAGE4.md).
+> Historical snapshot: this document describes Stage 3 at its review date. For the current project summary, see the [overview](README.md) and [technical reference](docs/PROJECT-REFERENCE.md); for MAMA-GUARD, see [HANDOVER-STAGE4.md](HANDOVER-STAGE4.md).
 
 **Status:** interactive, local synthetic demonstration. Stage 1 Foundation and Stage 2 GEOACCESS remain in place; Stage 4 has not been started and requires your review and approval. This is not an operational healthcare system or a university endorsement, deployment or partnership.
 
