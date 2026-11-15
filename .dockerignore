@@ -1,5 +1,6 @@
 # Do not put local credentials, synthetic databases or generated artifacts in
 # the Docker build context. The image builds the frontend from source.
+# Repository documentation and screenshot assets stay outside the runtime image.
 .git
 .git/**
 node_modules
