@@ -1,5 +1,7 @@
 # senTRA backend — synthetic identity foundation
 
+[Project overview](../README.md) · [Security and data map](../docs/MILESTONE-1-SECURITY-AND-DATA-MAP.md) · [Render guide](../docs/MILESTONE-1-RENDER-PROTOTYPE.md)
+
 **Synthetic development and tests only. Never enter or deploy this backend with real patient, professional or other sensitive information.** This is not a production healthcare service, an independently reviewed security product, a FHIR server or a regulatory-compliance claim.
 
 The original FastAPI scaffold and its `/health` endpoint remain. Milestone 1 adds a narrow identity/access API for **fixed synthetic examples only**. No identity provider, PostgreSQL server, professional verification service, mailbox or email sender is bundled or connected by default. The existing GEOACCESS, REFLEX and MAMA-GUARD demos do not use this API and are not protected by it.
