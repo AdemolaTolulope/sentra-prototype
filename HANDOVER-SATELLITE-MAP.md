@@ -1,5 +1,7 @@
 # senTRA — satellite, globe and close-up map update
 
+> Historical imagery handover. Start with the [project overview](README.md) and [technical reference](docs/PROJECT-REFERENCE.md) for the current summary and safety boundaries.
+
 This update responds to the request for a more convincing globe, better zoomed-in map graphics and clearer evidence/uncertainty cues. It builds on the [Stage 4.5 handover](HANDOVER-STAGE4.5.md) without changing its synthetic healthcare data or its safety boundaries.
 
 > **Demonstration only.** Facility examples, service tags and referral connections are fictional. Separately mapped OpenStreetMap healthcare points are unverified and do not establish services or readiness. Do not enter real patient information or use this app for care, routing, emergency response or resource allocation.
