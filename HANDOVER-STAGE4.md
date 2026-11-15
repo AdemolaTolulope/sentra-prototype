@@ -1,5 +1,7 @@
 # senTRA Stage 4 — MAMA-GUARD handover
 
+> Historical maternal-health demonstration handover. See the [project overview](README.md) and [technical reference](docs/PROJECT-REFERENCE.md) for the current summary and safety boundaries.
+
 **Status:** synthetic prototype complete for review; not an operational maternal-health service.  
 **Review date:** 12 November 2026.  
 **Project:** student-led innovation representing the Department of Biochemistry, Faculty of Science, Adekunle Ajasin University (AAUA), Akungba-Akoko, Ondo State, Nigeria, for the USPF Changemaker Challenge 2026 — Healthcare Sector. Representation does not imply university endorsement or a partnership.
