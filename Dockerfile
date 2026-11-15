@@ -1,3 +1,4 @@
+# Synthetic prototype only: the Render blueprint starts without a configured identity provider.
 # Build the complete existing frontend, including its maps and service worker.
 FROM node:22-bookworm-slim AS frontend
 WORKDIR /work
