@@ -1,3 +1,4 @@
+# Separate Render Blueprint for the synthetic senTRA prototype.
 # Synthetic demonstration ONLY. No external identity provider is configured.
 # On the free plan, the local SQLite database is lost on restart, redeploy or
 # spin-down. Do not use real patient, professional or other sensitive data.
