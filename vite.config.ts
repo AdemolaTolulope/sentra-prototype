@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 
+// Frontend build, optional same-origin API proxy, worker and offline asset configuration.
 // Serve the pinned, self-contained MapLibre 6 worker without Vite's JS/HMR
 // transformation in development. Production emits the same file as a hashed
 // URL asset. Revalidate worker packaging when upgrading MapLibre.
