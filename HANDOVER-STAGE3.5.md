@@ -1,6 +1,6 @@
 # senTRA Stage 3.5 — platform architecture and workstation handover
 
-> Historical snapshot: this document describes Stage 3.5 at its review date. For the current MAMA-GUARD implementation, see [HANDOVER-STAGE4.md](HANDOVER-STAGE4.md).
+> Historical snapshot: this document describes Stage 3.5 at its review date. For the current project summary, see the [overview](README.md) and [technical reference](docs/PROJECT-REFERENCE.md); for MAMA-GUARD, see [HANDOVER-STAGE4.md](HANDOVER-STAGE4.md).
 
 **Status:** prototype complete for review, not an operational healthcare platform.  
 **Review date:** 12 November 2026.  
