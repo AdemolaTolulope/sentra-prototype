@@ -5,7 +5,8 @@
   "version": "1.0.0",
   "type": "module",
   "engines": {
-    "node": ">=22"
+    "node": ">=22",
+    "npm": ">=9"
   },
   "scripts": {
     "dev": "vite --host 0.0.0.0",
