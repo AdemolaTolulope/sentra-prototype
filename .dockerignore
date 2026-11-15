@@ -1,0 +1,47 @@
+# Do not put local credentials, synthetic databases or generated artifacts in
+# the Docker build context. The image builds the frontend from source.
+.git
+.git/**
+node_modules
+**/node_modules
+.venv
+**/.venv
+.venv/**
+dist
+build
+.synthetic-data
+.synthetic-data/**
+**/__pycache__
+**/.pytest_cache
+**/.mypy_cache
+**/.cache
+**/.vite
+**/*.pyc
+**/*.pyo
+**/*.tsbuildinfo
+.env
+.env.*
+**/.env
+**/.env.*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.db
+*.db-*
+**/*.sqlite
+**/*.sqlite3
+**/*.sqlite-*
+**/*.sqlite3-*
+**/*.db
+**/*.db-*
+*.pem
+*.key
+**/*.pem
+**/*.key
+# Documentation, browser screenshots and test fixtures are not needed to build.
+docs
+docs/**
+backend/tests
+backend/tests/**
+HANDOVER*.md

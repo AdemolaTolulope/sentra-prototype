@@ -1,0 +1,7 @@
+import type { FeatureCollection, Point, LineString } from 'geojson';
+import type { DemoFacility, PopulationCell, Settlement } from '../data/types';
+export const emptyFeatures:FeatureCollection={type:'FeatureCollection',features:[]};
+export function facilityFeatures(rows:DemoFacility[]):FeatureCollection<Point>{return {type:'FeatureCollection',features:rows.map(f=>({type:'Feature',properties:{id:f.id,name:f.name,category:f.category,maternal:f.services.includes('Maternal care'),emergency:f.services.includes('Emergency care')},geometry:{type:'Point',coordinates:f.coordinates}}))};}
+export function settlementFeatures(rows:Settlement[], outside?:Set<string>):FeatureCollection<Point>{return {type:'FeatureCollection',features:rows.map(s=>({type:'Feature',properties:{id:s.id,name:s.name,outside:outside?.has(s.id)??false},geometry:{type:'Point',coordinates:s.coordinates}}))};}
+export function populationFeatures(rows:PopulationCell[],outside:Set<number>):FeatureCollection<Point>{return {type:'FeatureCollection',features:rows.map(c=>({type:'Feature',properties:{id:c.id,outside:outside.has(c.id),population:c.population,density:c.density},geometry:{type:'Point',coordinates:[c.lng,c.lat]}}))};}
+export function straightLine(a:[number,number],b:[number,number]):FeatureCollection<LineString>{return {type:'FeatureCollection',features:[{type:'Feature',properties:{method:'straight-line — not a route'},geometry:{type:'LineString',coordinates:[a,b]}}]};}

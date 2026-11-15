@@ -1,0 +1,16 @@
+import { chromium } from 'playwright';
+import assert from 'node:assert/strict';
+const base=process.env.SENTRA_URL || 'http://127.0.0.1:5173/';
+const browser=await chromium.launch({headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader','--use-angle=swiftshader']});
+try {
+ const context=await browser.newContext({viewport:{width:1440,height:900},serviceWorkers:'allow'});const page=await context.newPage();const pageErrors=[];page.on('pageerror',e=>pageErrors.push(e.message));
+ await page.goto(`${base}#/operations`,{waitUntil:'domcontentloaded'});await page.evaluate(()=>navigator.serviceWorker.ready);await page.waitForFunction(()=>!!navigator.serviceWorker.controller,null,{timeout:45000});
+ // Reload while controlled so the lazy, public national assets enter the cache.
+ await page.reload({waitUntil:'domcontentloaded'});await page.waitForFunction(()=>document.querySelectorAll('.ga-map-stage canvas').length===1&&!document.querySelector('.ga-map-status')&&!document.querySelector('.sp-map-resource'),null,{timeout:60000});
+ await page.waitForFunction(async()=>{const key=(await caches.keys()).find(k=>k.startsWith('sentra-static-'));if(!key)return false;const cache=await caches.open(key);return !!(await cache.match('/data/geoaccess/lga-index.json',{ignoreVary:true}))&&!!(await cache.match('/data/geoaccess/population-summary.json',{ignoreVary:true}))&&!!(await cache.match('/data/geoaccess/facilities-demo.json',{ignoreVary:true}));},null,{timeout:30000});
+ await context.setOffline(true);await page.goto(`${base}#/sentra-ai`,{waitUntil:'domcontentloaded'});await page.reload({waitUntil:'domcontentloaded'});await page.getByRole('heading',{name:'Assistant access is not configured.'}).waitFor({timeout:45000});assert.equal(await page.locator('.sp-page input,.sp-page textarea').count(),0);await page.getByRole('button',{name:'Emergency interruption'}).click();await page.getByRole('button',{name:'Next step'}).click();assert.match(await page.locator('.sp-script-step').innerText(),/Stop the ordinary workflow/);
+ await page.goto(`${base}#/operations`,{waitUntil:'domcontentloaded'});await page.reload({waitUntil:'domcontentloaded'});await page.waitForFunction(()=>document.querySelectorAll('.ga-map-stage canvas').length===1&&!document.querySelector('.ga-map-status')&&!document.querySelector('.sp-map-resource'),null,{timeout:60000});assert.match(await page.locator('.sp-ops-selection').innerText(),/modeled residents/i);assert.equal(await page.getByRole('button',{name:'3D',exact:true}).getAttribute('aria-pressed'),'true');
+ await page.locator('.sp-ops-controls .geo-trigger').click();await page.getByRole('option',{name:'Ondo',exact:true}).click();await page.locator('.sp-map-resource.is-error').waitFor({timeout:45000});assert.match(await page.locator('.sp-map-resource.is-error').innerText(),/unavailable offline/i);assert.deepEqual(pageErrors,[]);
+ assert.match(await page.locator('.ga-provider-strip').innerText(),/OSM context unavailable.*terrain unavailable/);
+ console.log('Platform offline: locked AI and fixed safety script reopen; cached national 3D map works without optional terrain; uncached regional data is explicitly unavailable.');
+} finally {await browser.close();}

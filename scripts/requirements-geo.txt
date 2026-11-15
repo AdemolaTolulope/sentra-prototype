@@ -1,0 +1,5 @@
+# Optional preprocessing only; not required by the web app.
+numpy>=2,<3
+rasterio>=1.4,<2
+shapely>=2,<3
+Pillow>=10,<14

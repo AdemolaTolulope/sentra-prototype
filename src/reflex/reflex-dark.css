@@ -1,0 +1,164 @@
+/* REFLEX-only operational palette. The shared shell and GEOACCESS retain their
+   existing visual system; these tokens never apply to the other workspaces. */
+.rf-page {
+  --rf-background:#080d0b;
+  --rf-panel:#101912;
+  --rf-raised:#14221b;
+  --rf-border:#294034;
+  --rf-text:#e9efea;
+  --rf-muted:#a8b7ae;
+  --rf-emerald:#40b981;
+  --rf-gold:#d6b65c;
+  background:var(--rf-background);
+  color:var(--rf-text);
+  min-height:calc(100vh - 70px);
+  color-scheme:dark;
+}
+.rf-page .card {background:var(--rf-panel);border-color:var(--rf-border);box-shadow:none}
+.rf-page :is(h1,h2,h3,h4,strong,b) {color:var(--rf-text)}
+.rf-page :is(p,small) {color:var(--rf-muted);font-size:12px;line-height:1.55}
+.rf-page .card :is(p,small),.rf-page .rf-section-intro p {color:var(--rf-muted)}
+.rf-page .rf-heading h1 {color:#e9efea}
+.rf-page .rf-heading p {color:#a8b7ae}
+.rf-page .rf-heading .title-subtle {color:#6e9c7d}
+.rf-page .eyebrow,.rf-page .rf-overline {color:#7dcba1}
+.rf-page .geo-trigger {background:#14221b;border-color:#30483a;color:#a8b7ae;box-shadow:none}
+.rf-page .geo-trigger strong {color:#e9efea}
+.rf-page .geo-popover {color-scheme:light}
+.rf-page .geo-popover :is(strong,b) {color:#355544}
+.rf-page .geo-popover :is(p,small) {color:#6e8174}
+.rf-page .rf-primary {background:#08764e;color:#fff;border:1px solid #14865b}
+.rf-page .rf-primary:hover {background:#0b895c}
+.rf-page .rf-secondary {background:#14221b;border-color:#355043;color:#d2e5d8}
+.rf-page .rf-secondary:hover {background:#1b3024;border-color:#4b7860}
+.rf-page :is(.rf-text-button,.rf-inline-link,.rf-link,.rf-bottom-note>button) {color:#77d6a3}
+.rf-page :is(.rf-text-button,.rf-inline-link,.rf-link,.rf-bottom-note>button):hover {color:#b5efd0}
+.rf-page :is(.rf-mini-summary>button,.rf-network-links button strong,.rf-detail-path button,.rf-follow-due button) {color:#8cddb0}
+.rf-page :is(button,input,select,textarea,summary):focus-visible {outline:2px solid #d6b65c;outline-offset:2px}
+.rf-page .rf-hero {background:#14291e;border:1px solid #2a4936;color:#e9efea}
+.rf-page .rf-hero h2 {color:#f0f7f1}
+.rf-page .rf-hero p,.rf-page .rf-hero-copy>div {color:#c3d9ca}
+.rf-page .rf-integrity,.rf-page .rf-callout,.rf-page .rf-inline-warning,.rf-page .rf-warning {background:#282416;border:1px solid #574b29;color:#e2d1a6}
+.rf-page .rf-integrity strong,.rf-page .rf-warning button {color:#f3e2b1}
+.rf-page .rf-integrity svg,.rf-page .rf-callout svg {color:var(--rf-gold)}
+.rf-page .rf-local-label,.rf-page .rf-data-chip,.rf-page .rf-card-tag {background:#2b2819;border-color:#5e5330;color:#e3ca80}
+.rf-page .rf-tabs-wrap {border-color:#2b4134;scrollbar-color:#476752 transparent}
+.rf-page .rf-tabs button {color:#a8b7ae}
+.rf-page .rf-tabs button:hover,.rf-page .rf-tabs button[aria-selected=true] {color:#7bdfab}
+.rf-page .rf-tabs button[aria-selected=true]::after {background:#40b981}
+.rf-page .rf-filter-panel {background:#101912;border-color:#294034}
+.rf-page .rf-filter-panel summary :is(strong,small),.rf-page .rf-filter-panel summary>span:first-child {color:#c3d5c8}
+.rf-page .rf-filter-content {border-color:#294034}
+.rf-page :is(.rf-filter-grid label,.rf-form-grid label,.rf-field) {color:#d1e0d5}
+.rf-page :is(input:not([type=checkbox]):not([type=radio]),select,textarea) {background:#0b1510;border-color:#355043;color:#e9efea}
+.rf-page :is(input,textarea)::placeholder {color:#91a99a;opacity:1}
+.rf-page option {background:#14221b;color:#e9efea}
+.rf-page .geo-popover :is(input,button) {background:#fff;color:#355343}
+.rf-page .geo-popover button:hover,.rf-page .geo-popover button.selected {background:#eef7f0;color:#106c49}
+.rf-page .rf-filter-foot,.rf-page .rf-bottom-note {color:#a8b7ae}
+.rf-page .rf-filter-foot button {color:#79d6a3}
+.rf-page .rf-kpi>div,.rf-page .rf-network-stats span,.rf-page .rf-analytics-kpis span,.rf-page .rf-follow-stats>button>div,.rf-page .rf-sim-kpis article>span {color:#c3d3c7}
+.rf-page :is(.rf-kpi>strong,.rf-network-stats strong,.rf-analytics-kpis strong,.rf-follow-stats strong,.rf-sim-kpis article strong,.rf-donut>div strong) {color:#eff8f0}
+.rf-page .rf-section-intro p,.rf-page .rf-muted,.rf-page .rf-footnote {color:#a8b7ae}
+.rf-page .rf-panel-head p {color:#a8b7ae}
+.rf-page .rf-table :is(th,td),.rf-page .rf-table td small {color:#c1d0c5;border-color:#294034}
+.rf-page .rf-table th {color:#a8b7ae}
+.rf-page .rf-table tr.is-selected td {background:#1a3023}
+.rf-page .rf-bars button,.rf-page .rf-analytics-list :is(div,button),.rf-page .rf-stage-bars>div {color:#c1d0c5;border-color:#294034}
+.rf-page .rf-stage-buttons>button {display:grid;grid-template-columns:124px 1fr 28px;gap:9px;align-items:center;width:100%;padding:6px 3px;text-align:left;color:#c1d0c5;border-radius:4px;font-size:11px}
+.rf-page .rf-stage-buttons>button:hover {background:#1c3627}
+.rf-page .rf-stage-buttons>button i {height:7px;overflow:hidden;border-radius:4px;background:#263d2e}
+.rf-page .rf-stage-buttons>button i b {display:block;height:100%;background:#40b981}
+.rf-page .rf-stage-buttons>button strong {text-align:right;font-size:11px}
+.rf-page .rf-bars i,.rf-page .rf-stage-bars i {background:#263d2e}
+.rf-page .rf-bars i b,.rf-page .rf-stage-bars i b {background:#40b981}
+.rf-page .rf-status-legend button {color:#c7d7cc}
+.rf-page .rf-signal-list button {background:#14221b;border-color:#294034}
+.rf-page .rf-signal-list button:hover {background:#1b3024}
+.rf-page .rf-signal-icon {background:#3b3420;color:#d6b65c}
+.rf-page .rf-status {background:#28382e;color:#d4e2d7}
+.rf-page :is(.rf-status--accepted,.rf-status--service-completed,.rf-status--counter-referral-issued) {background:#173b2a;color:#9feac0}
+.rf-page :is(.rf-status--submitted,.rf-status--awaiting-acceptance) {background:#3b3118;color:#f0d78b}
+.rf-page .rf-status--rejected {background:#402521;color:#ffb4a7}
+.rf-page :is(.rf-status--in-transit,.rf-status--received) {background:#173b3b;color:#a2e6e1}
+.rf-page .rf-empty>span,.rf-page .rf-success-icon,.rf-page .rf-guide-item>span {background:#1c3b29;color:#87d9aa}
+.rf-page .rf-loading {background:#14291e;color:#c0dfca}
+.rf-page .rf-search {background:#0b1510;border-color:#355043}
+.rf-page .rf-search input {background:transparent;border:0;color:#e9efea}
+.rf-page :is(.rf-origin-box,.rf-mini-summary,.rf-review-grid>div,.rf-saved-summary>div,.rf-match-row,.rf-match-hero,.rf-network-metrics div,.rf-edge-detail,.rf-detail-path,.rf-counter-path,.rf-counter-summary,.rf-counter-success,.rf-sim-comparison>div,.rf-hotspot,.rf-scenario-choices button,.rf-sim-empty) {background:#14221b;border-color:#294034}
+.rf-page .rf-match-row.is-selected,.rf-page .rf-scenario-choices button[aria-pressed=true],.rf-page .rf-follow-stats>button.is-active {background:#1b3828;border-color:#54a776}
+.rf-page .rf-match-row :is(strong,b),.rf-page .rf-scenario-choices strong {color:#e5f0e8}
+.rf-page .rf-scenario-choices button[aria-pressed=true] strong {color:#a2eabb}
+.rf-page .rf-meta-list>div,.rf-page .rf-detail-meta>div,.rf-page .rf-follow-row,.rf-page .rf-network-links button,.rf-page .rf-alerts button {border-color:#294034}
+.rf-page :is(.rf-meta-list span,.rf-detail-meta span,.rf-detail-path span,.rf-network-node-head small,.rf-edge-detail span) {color:#a8b7ae}
+.rf-page :is(.rf-meta-list strong,.rf-detail-meta strong,.rf-detail-path strong,.rf-network-node-head strong,.rf-edge-detail strong) {color:#e0eee3}
+.rf-page .rf-method {background:#15271d;color:#bbd0c1;border:1px solid #294034}
+.rf-page .rf-method svg {color:#7cc79c}
+.rf-page .rf-segment {background:#0d1912;border-color:#294034}
+.rf-page .rf-segment button {color:#adbfaf}
+.rf-page .rf-segment button[aria-pressed=true] {background:#214332;color:#b4efc9;box-shadow:none}
+.rf-page .rf-network-graph,.rf-page .rf-network-map {background:#0b1711;border-color:#294034}
+.rf-page .rf-graph-controls {border-color:#355043;box-shadow:none}
+.rf-page .rf-graph-controls button,.rf-page .rf-pagination button {background:#14221b;color:#c3d8c8;border-color:#355043}
+.rf-page .rf-graph-help,.rf-page .rf-map-note {background:rgba(10,24,16,.95);border-color:#355043;color:#d0dfd3}
+.rf-page .rf-map-message {background:#0b1711;color:#c3d8c8}
+.rf-page .rf-network-graph [data-node-id]:focus-visible circle:nth-child(2) {stroke:#f0d78b;stroke-width:3}
+.rf-page .rf-network-graph [data-edge-id]:focus-visible {stroke:#f0d78b;stroke-opacity:.8}
+.rf-page .rf-network-legend,.rf-page .rf-chart-key,.rf-page .rf-pagination {color:#b0c2b5}
+.rf-page .rf-network-node-head>span {background:#1b3a28;color:#9feac0}
+.rf-page .rf-detail-divider {background:#294034}
+.rf-page .rf-timeline-item:before {background:#476450}
+.rf-page .rf-timeline-dot {background:#6f9d7e;border-color:#213a2b}
+.rf-page .rf-timeline-dot.active {background:#5be09b}
+.rf-page .rf-danger {background:#392421;color:#ffc1b5;border-color:#7a4a40}
+.rf-page .rf-follow-stats>button {background:#101912}
+.rf-page .rf-chips button,.rf-page .rf-delay-buttons button {background:#1a2b20;color:#c1d4c5}
+.rf-page .rf-chips button[aria-pressed=true],.rf-page .rf-delay-buttons button[aria-pressed=true] {background:#26563b;color:#d7f8e1}
+.rf-page .rf-flag {background:#1d3830;color:#b5e5d0}
+.rf-page .rf-flag.amber {background:#40361c;color:#f0d78b}
+.rf-page .rf-flag.red {background:#402521;color:#ffb4a7}
+.rf-page .rf-active-drill {background:#183729;border-color:#38694b;color:#d0eed8}
+.rf-page .rf-active-drill button {color:#9be5b9}
+.rf-page .recharts-cartesian-axis-tick-value {fill:#a8b7ae}
+.rf-page .recharts-cartesian-grid line {stroke:#2b4233}
+.rf-page .recharts-default-tooltip {background:#14221b!important;border:1px solid #45614e!important;color:#e9efea!important}
+.rf-page .recharts-tooltip-label {color:#e9efea!important}
+.rf-page .rf-rule-success {color:#a2eabb}
+.rf-page .rf-scenario-fields {border-color:#294034}
+.rf-page .rf-excluded {padding:15px;margin:0 0 12px}
+.rf-page .rf-excluded summary {color:#c8e8d2;font-size:12px;font-weight:700;cursor:pointer}
+.rf-page .rf-excluded p {margin:8px 0}
+.rf-page .rf-excluded ul {display:grid;gap:0;list-style:none;padding:0;margin:0;max-height:220px;overflow:auto}
+.rf-page .rf-excluded li {display:grid;grid-template-columns:minmax(150px,1fr) 2fr;gap:10px;border-top:1px solid #294034;padding:7px 0;font-size:11px;color:#c1d0c5}
+.rf-page .rf-excluded strong {font-size:11px}
+.rf-page .rf-identity {display:flex;gap:14px;align-items:center;background:#14221b;border:1px solid #355043;border-radius:8px;padding:12px;margin-top:14px}
+.rf-page .rf-identity-code {flex:none;background:#fff;border-radius:4px;line-height:0;padding:3px}
+.rf-page .rf-identity>div:last-child {min-width:0;display:grid;gap:5px}
+.rf-page .rf-identity .rf-overline {display:flex;align-items:center;gap:5px}
+.rf-page .rf-identity strong {overflow-wrap:anywhere;font-size:12px}
+.rf-page .rf-identity p,.rf-page .rf-identity small {margin:0;font-size:11px}
+.rf-page .rf-identity .rf-secondary {justify-self:start}
+.rf-page .rf-pipeline-strip {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:#294034;border:1px solid #294034;border-radius:8px;overflow:hidden;margin-bottom:6px}
+.rf-page .rf-pipeline-strip button {display:flex;align-items:center;gap:8px;text-align:left;background:#14221b;color:#c4d4c8;padding:12px}
+.rf-page .rf-pipeline-strip button:hover {background:#1c3627}
+.rf-page .rf-pipeline-strip button span {flex:1;font-size:11px;line-height:1.4}
+.rf-page .rf-pipeline-strip button strong {font-size:16px;color:#f0f7f1}
+.rf-page .rf-pipeline-strip button svg {color:#75c999}
+.rf-page .rf-pipeline-note {margin:0 0 13px;color:#a8b7ae;font-size:11px}
+.rf-page .rf-attempt-form {display:flex;flex-wrap:wrap;align-items:end;gap:8px;margin-top:10px;padding:10px;background:#14221b;border:1px solid #355043;border-radius:6px}
+.rf-page .rf-attempt-form .rf-field {min-width:180px;flex:1}
+.rf-page .rf-attempt-form button {font-size:11px}
+.rf-page .rf-reporting-period {display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:0 0 12px;color:#bacdbf;font-size:11px}
+.rf-page .rf-reporting-period strong {color:#d6b65c;font-size:11px;letter-spacing:.5px}
+.rf-page .rf-outcomes {margin-bottom:12px}
+.rf-page .rf-outcome-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.rf-page .rf-outcome-grid>div {display:grid;gap:5px;padding:11px;border:1px solid #294034;border-radius:6px;background:#14221b}
+.rf-page .rf-outcome-grid span {font-size:11px;color:#c3d3c7}
+.rf-page .rf-outcome-grid strong {font-size:19px}
+.rf-page .rf-outcome-grid small {font-size:11px}
+.rf-page .rf-network-stats {grid-template-columns:repeat(6,minmax(0,1fr))}
+.rf-page .rf-network-insights {display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+@media(max-width:1300px){.rf-page .rf-network-stats {grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:760px){.rf-page .rf-network-stats,.rf-page .rf-pipeline-strip {grid-template-columns:repeat(2,minmax(0,1fr))}.rf-page .rf-network-insights {grid-template-columns:1fr}}
+@media(max-width:480px){.rf-page .rf-excluded li {grid-template-columns:1fr;gap:3px}.rf-page .rf-identity {display:grid;grid-template-columns:minmax(0,1fr);align-items:start}.rf-page .rf-identity-code {justify-self:start}.rf-page .rf-identity .rf-secondary {white-space:normal;max-width:100%;text-align:center}.rf-page .rf-outcome-grid {grid-template-columns:1fr}.rf-page .rf-identity-code svg {width:72px;height:72px}}
+@media(prefers-reduced-motion:reduce){.rf-page *, .rf-page *::before, .rf-page *::after {scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}

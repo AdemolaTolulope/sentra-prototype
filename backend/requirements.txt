@@ -1,0 +1,13 @@
+# Optional backend: synthetic-only identity foundation plus future contracts.
+# The existing synthetic frontend modules do not require Python.
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+pydantic>=2,<3
+# Synthetic-only identity foundation: OIDC HTTP transport and JWT validation.
+httpx>=0.27,<1
+PyJWT[crypto]>=2.10,<3
+# Future integrations only; no PostgreSQL or analytics implementation is connected yet.
+psycopg[binary]>=3.2,<4
+geoalchemy2>=0.15,<1
+networkx>=3.3,<4
+ortools>=9.10,<10

@@ -1,0 +1,14 @@
+# Synthetic demonstration ONLY. No external identity provider is configured.
+# On the free plan, the local SQLite database is lost on restart, redeploy or
+# spin-down. Do not use real patient, professional or other sensitive data.
+services:
+  - type: web
+    name: sentra-synthetic-prototype
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: SENTRA_IDENTITY_MODE
+        value: synthetic
+      - key: SENTRA_SYNTHETIC_DB
+        value: /tmp/sentra-synthetic-prototype/identity.sqlite3

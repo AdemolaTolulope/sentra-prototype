@@ -1,0 +1,29 @@
+import { ArrowUpRight, CircleCheck, FlaskConical, Info, Layers3, LockKeyhole } from 'lucide-react';
+import { Area, AreaChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { ALL_NAV } from '../components/navConfig';
+import { GeoSelector } from '../components/GeoSelector';
+import { PeriodSelector } from '../components/charts/Analytics';
+import { useWorkspaceContext } from '../components/WorkspaceContext';
+import { shortRegion } from '../data/demo';
+import { useIntelligenceData } from '../services/intelligenceProvider';
+import type { Route } from '../services/route';
+
+// GEOACCESS, REFLEX and MAMA-GUARD have dedicated workspaces in App.tsx;
+// the remaining planned modules use this Stage 1 foundation page.
+type ModuleRoute='medilens'|'sentinel';
+const modules:Record<ModuleRoute,{name:string;subtitle:string;intro:string;purpose:string;capabilities:string[];metric:'facilities'|'referrals'|'maternal'|'medicine'|'indicators';metricLabel:string;chartField:'referrals'|'followups'|'reports';chartTitle:string}> = {
+  medilens:{name:'MEDILENS',subtitle:'Medicine and Diagnostic Intelligence',intro:'Prepare for reliable visibility into medicine reports and diagnostic service availability.',purpose:'Future verified reports can help users understand the availability and readiness of essential services.',capabilities:['Medicine availability reporting','Diagnostic capability profiles','Source & timestamp verification','Availability trends and gaps'],metric:'medicine',metricLabel:'Example availability reports',chartField:'reports',chartTitle:'Sample reporting activity'},
+  sentinel:{name:'SENTINEL',subtitle:'Public Health Surveillance',intro:'Establish the foundations for responsible, aggregated public-health intelligence and review.',purpose:'Future epidemiological views will represent uncertainty and distinguish verified signals from unverified reports.',capabilities:['Temporal indicator analysis','Geographic indicator distribution','Uncertainty and anomaly review','Provenance-aware surveillance'],metric:'indicators',metricLabel:'Example indicators',chartField:'reports',chartTitle:'Sample indicator activity'},
+};
+export function isModuleRoute(route:Route):route is ModuleRoute{return route in modules;}
+export function ModulePage({route}:{route:ModuleRoute}){
+  const {state,go}=useWorkspaceContext();const config=modules[route],nav=ALL_NAV.find(x=>x.route===route)!;const Icon=nav.icon;const provider=useIntelligenceData();const metrics=provider.metrics(state.region), data=provider.trend(state.region,state.period);
+  return <div className="page-content module-page">
+    <div className="page-heading"><div><div className="eyebrow"><span/> INTELLIGENCE MODULE <span className="eyebrow-divider">/</span> {config.name}</div><h1>{config.name} <span className="title-subtle">/</span> {config.subtitle}</h1><p>{config.intro}</p></div><div className="heading-actions"><GeoSelector/></div></div>
+    <div className="module-banner"><div className="module-banner-icon"><Icon size={24}/></div><div><div className="module-banner-label">MODULE FOUNDATION <span>STAGE 01</span></div><h2>{config.subtitle}</h2><p>{config.purpose}</p></div><button onClick={()=>go('data-observatory')}>View data sources <ArrowUpRight size={15}/></button></div>
+    <div className="foundation-notice"><Info size={16}/><span><strong>Foundation preview.</strong> All indicators and locations below are synthetic; full module functionality is planned for later stages.</span></div>
+    <div className="module-stats"><div><span>{config.metricLabel}</span><strong>{metrics[config.metric].toLocaleString()}</strong><small>Synthetic value</small></div><div><span>Selected geography</span><strong className="stat-region">{shortRegion(state.region)}</strong><small>National / state / FCT</small></div><div><span>Operational status</span><strong className="stat-status"><i/> Foundation</strong><small>No live services connected</small></div></div>
+    <div className="module-work-grid"><section className="card module-chart-card"><div className="chart-card-head"><div><div className="heading-title-row"><span className="section-icon"><FlaskConical size={16}/></span><h2>{config.chartTitle}</h2></div><p>Illustrative pattern for the selected geography</p></div><PeriodSelector/></div><div className="module-chart"><ResponsiveContainer width="100%" height="100%"><AreaChart data={data} margin={{top:10,right:10,left:-20,bottom:0}}><CartesianGrid vertical={false} stroke="#edf2ee" strokeDasharray="3 4"/><XAxis dataKey="month" tick={{fontSize:11,fill:'#8a9991'}} axisLine={false} tickLine={false} dy={9}/><YAxis tick={{fontSize:11,fill:'#8a9991'}} axisLine={false} tickLine={false}/><Tooltip contentStyle={{border:'1px solid #e2eae5',borderRadius:10,fontSize:12}}/><Area name="Synthetic sample" dataKey={config.chartField} type="monotone" stroke="#16865b" fill="#e7f5ed" strokeWidth={2.5} isAnimationActive={state.animateCharts}/></AreaChart></ResponsiveContainer></div><div className="chart-footnote">Synthetic demonstration values; not observations or a forecast.</div></section><section className="card foundation-card"><div className="card-heading small-card-heading"><div><div className="heading-title-row"><span className="section-icon"><Layers3 size={16}/></span><h2>What this module will support</h2></div><p>Capabilities planned for subsequent stages</p></div></div><div className="capability-list">{config.capabilities.map(c=><div key={c}><span><CircleCheck size={15}/></span><strong>{c}</strong><small>PLANNED</small></div>)}</div><div className="foundation-lock"><LockKeyhole size={15}/> Not connected to operational health services.</div></section></div>
+    <div className="page-end-link"><button className="text-button" onClick={()=>go('overview')}>← Back to command centre</button><span>senTRA · {config.name} · STAGE 01</span></div>
+  </div>;
+}

@@ -1,0 +1,927 @@
+[
+  {
+    "region": "Abia",
+    "access": 61,
+    "facilities": 50,
+    "communities": 48,
+    "referrals": 100,
+    "maternal": 72,
+    "medicine": 48,
+    "indicators": 3,
+    "readiness": {
+      "services": 89,
+      "medicines": 63,
+      "diagnostics": 59
+    },
+    "center": [
+      7.48849,
+      5.43182
+    ],
+    "bounds": [
+      7.14186,
+      4.8218,
+      7.9875,
+      6.04215
+    ]
+  },
+  {
+    "region": "Federal Capital Territory (FCT), Abuja",
+    "access": 85,
+    "facilities": 28,
+    "communities": 25,
+    "referrals": 112,
+    "maternal": 74,
+    "medicine": 37,
+    "indicators": 1,
+    "readiness": {
+      "services": 82,
+      "medicines": 75,
+      "diagnostics": 59
+    },
+    "center": [
+      7.18827,
+      8.98496
+    ],
+    "bounds": [
+      6.77996,
+      8.41934,
+      7.72408,
+      9.40868
+    ]
+  },
+  {
+    "region": "Adamawa",
+    "access": 57,
+    "facilities": 44,
+    "communities": 46,
+    "referrals": 61,
+    "maternal": 38,
+    "medicine": 22,
+    "indicators": 4,
+    "readiness": {
+      "services": 69,
+      "medicines": 72,
+      "diagnostics": 64
+    },
+    "center": [
+      12.30967,
+      9.17059
+    ],
+    "bounds": [
+      11.34152,
+      7.39122,
+      13.75067,
+      10.94946
+    ]
+  },
+  {
+    "region": "Akwa Ibom",
+    "access": 47,
+    "facilities": 54,
+    "communities": 26,
+    "referrals": 112,
+    "maternal": 40,
+    "medicine": 45,
+    "indicators": 4,
+    "readiness": {
+      "services": 69,
+      "medicines": 78,
+      "diagnostics": 39
+    },
+    "center": [
+      7.79518,
+      4.98806
+    ],
+    "bounds": [
+      7.46028,
+      4.46863,
+      8.344,
+      5.51935
+    ]
+  },
+  {
+    "region": "Anambra",
+    "access": 74,
+    "facilities": 49,
+    "communities": 28,
+    "referrals": 141,
+    "maternal": 30,
+    "medicine": 16,
+    "indicators": 1,
+    "readiness": {
+      "services": 67,
+      "medicines": 84,
+      "diagnostics": 60
+    },
+    "center": [
+      6.9724,
+      6.2138
+    ],
+    "bounds": [
+      6.60063,
+      5.68161,
+      7.33906,
+      6.75343
+    ]
+  },
+  {
+    "region": "Bauchi",
+    "access": 62,
+    "facilities": 29,
+    "communities": 25,
+    "referrals": 90,
+    "maternal": 25,
+    "medicine": 50,
+    "indicators": 4,
+    "readiness": {
+      "services": 71,
+      "medicines": 52,
+      "diagnostics": 62
+    },
+    "center": [
+      9.33369,
+      10.98966
+    ],
+    "bounds": [
+      8.74507,
+      9.44732,
+      11.00853,
+      12.53247
+    ]
+  },
+  {
+    "region": "Bayelsa",
+    "access": 63,
+    "facilities": 52,
+    "communities": 47,
+    "referrals": 134,
+    "maternal": 80,
+    "medicine": 45,
+    "indicators": 4,
+    "readiness": {
+      "services": 86,
+      "medicines": 66,
+      "diagnostics": 46
+    },
+    "center": [
+      5.96094,
+      4.80219
+    ],
+    "bounds": [
+      5.37517,
+      4.2702,
+      6.60724,
+      5.38057
+    ]
+  },
+  {
+    "region": "Benue",
+    "access": 61,
+    "facilities": 22,
+    "communities": 46,
+    "referrals": 82,
+    "maternal": 63,
+    "medicine": 52,
+    "indicators": 2,
+    "readiness": {
+      "services": 77,
+      "medicines": 58,
+      "diagnostics": 75
+    },
+    "center": [
+      8.81677,
+      7.27422
+    ],
+    "bounds": [
+      7.53051,
+      6.40127,
+      9.88861,
+      8.15817
+    ]
+  },
+  {
+    "region": "Borno",
+    "access": 66,
+    "facilities": 22,
+    "communities": 17,
+    "referrals": 68,
+    "maternal": 32,
+    "medicine": 19,
+    "indicators": 2,
+    "readiness": {
+      "services": 81,
+      "medicines": 54,
+      "diagnostics": 65
+    },
+    "center": [
+      13.43333,
+      11.87389
+    ],
+    "bounds": [
+      11.52934,
+      10.0247,
+      14.67797,
+      13.72131
+    ]
+  },
+  {
+    "region": "Cross River",
+    "access": 78,
+    "facilities": 30,
+    "communities": 46,
+    "referrals": 115,
+    "maternal": 76,
+    "medicine": 42,
+    "indicators": 4,
+    "readiness": {
+      "services": 80,
+      "medicines": 69,
+      "diagnostics": 55
+    },
+    "center": [
+      8.40564,
+      5.79007
+    ],
+    "bounds": [
+      7.84087,
+      4.68874,
+      9.47441,
+      6.89641
+    ]
+  },
+  {
+    "region": "Delta",
+    "access": 70,
+    "facilities": 40,
+    "communities": 16,
+    "referrals": 75,
+    "maternal": 28,
+    "medicine": 44,
+    "indicators": 2,
+    "readiness": {
+      "services": 73,
+      "medicines": 77,
+      "diagnostics": 52
+    },
+    "center": [
+      5.49646,
+      5.75567
+    ],
+    "bounds": [
+      4.97678,
+      5.01178,
+      6.7694,
+      6.50123
+    ]
+  },
+  {
+    "region": "Ebonyi",
+    "access": 76,
+    "facilities": 32,
+    "communities": 15,
+    "referrals": 77,
+    "maternal": 76,
+    "medicine": 52,
+    "indicators": 2,
+    "readiness": {
+      "services": 70,
+      "medicines": 84,
+      "diagnostics": 39
+    },
+    "center": [
+      8.06711,
+      6.24159
+    ],
+    "bounds": [
+      7.5035,
+      5.6848,
+      8.45683,
+      6.80013
+    ]
+  },
+  {
+    "region": "Edo",
+    "access": 74,
+    "facilities": 19,
+    "communities": 26,
+    "referrals": 114,
+    "maternal": 53,
+    "medicine": 25,
+    "indicators": 2,
+    "readiness": {
+      "services": 75,
+      "medicines": 63,
+      "diagnostics": 66
+    },
+    "center": [
+      5.87392,
+      6.66542
+    ],
+    "bounds": [
+      5.0129,
+      5.74639,
+      6.71577,
+      7.59142
+    ]
+  },
+  {
+    "region": "Ekiti",
+    "access": 68,
+    "facilities": 54,
+    "communities": 15,
+    "referrals": 72,
+    "maternal": 77,
+    "medicine": 15,
+    "indicators": 4,
+    "readiness": {
+      "services": 72,
+      "medicines": 68,
+      "diagnostics": 74
+    },
+    "center": [
+      5.30038,
+      7.69646
+    ],
+    "bounds": [
+      4.86386,
+      7.28319,
+      5.79162,
+      8.11125
+    ]
+  },
+  {
+    "region": "Enugu",
+    "access": 52,
+    "facilities": 27,
+    "communities": 30,
+    "referrals": 56,
+    "maternal": 31,
+    "medicine": 36,
+    "indicators": 1,
+    "readiness": {
+      "services": 86,
+      "medicines": 79,
+      "diagnostics": 69
+    },
+    "center": [
+      7.39153,
+      6.51981
+    ],
+    "bounds": [
+      6.86097,
+      5.92464,
+      7.9034,
+      7.10155
+    ]
+  },
+  {
+    "region": "Gombe",
+    "access": 78,
+    "facilities": 58,
+    "communities": 44,
+    "referrals": 81,
+    "maternal": 65,
+    "medicine": 43,
+    "indicators": 1,
+    "readiness": {
+      "services": 77,
+      "medicines": 73,
+      "diagnostics": 61
+    },
+    "center": [
+      11.21473,
+      10.40297
+    ],
+    "bounds": [
+      10.49428,
+      9.5256,
+      11.85454,
+      11.28672
+    ]
+  },
+  {
+    "region": "Imo",
+    "access": 86,
+    "facilities": 47,
+    "communities": 30,
+    "referrals": 126,
+    "maternal": 57,
+    "medicine": 33,
+    "indicators": 3,
+    "readiness": {
+      "services": 79,
+      "medicines": 69,
+      "diagnostics": 47
+    },
+    "center": [
+      7.03342,
+      5.56903
+    ],
+    "bounds": [
+      6.63908,
+      5.19455,
+      7.43229,
+      5.93893
+    ]
+  },
+  {
+    "region": "Jigawa",
+    "access": 76,
+    "facilities": 50,
+    "communities": 35,
+    "referrals": 120,
+    "maternal": 49,
+    "medicine": 51,
+    "indicators": 2,
+    "readiness": {
+      "services": 72,
+      "medicines": 55,
+      "diagnostics": 44
+    },
+    "center": [
+      9.61193,
+      11.9784
+    ],
+    "bounds": [
+      8.12784,
+      10.94221,
+      10.60563,
+      13.01482
+    ]
+  },
+  {
+    "region": "Kaduna",
+    "access": 70,
+    "facilities": 48,
+    "communities": 39,
+    "referrals": 62,
+    "maternal": 32,
+    "medicine": 34,
+    "indicators": 2,
+    "readiness": {
+      "services": 93,
+      "medicines": 70,
+      "diagnostics": 53
+    },
+    "center": [
+      7.87309,
+      10.26209
+    ],
+    "bounds": [
+      6.09224,
+      9.00065,
+      8.81832,
+      11.52399
+    ]
+  },
+  {
+    "region": "Kano",
+    "access": 76,
+    "facilities": 46,
+    "communities": 34,
+    "referrals": 71,
+    "maternal": 31,
+    "medicine": 19,
+    "indicators": 1,
+    "readiness": {
+      "services": 84,
+      "medicines": 55,
+      "diagnostics": 50
+    },
+    "center": [
+      8.5251,
+      11.57517
+    ],
+    "bounds": [
+      7.67517,
+      10.54336,
+      9.36031,
+      12.6046
+    ]
+  },
+  {
+    "region": "Katsina",
+    "access": 65,
+    "facilities": 47,
+    "communities": 23,
+    "referrals": 74,
+    "maternal": 45,
+    "medicine": 33,
+    "indicators": 4,
+    "readiness": {
+      "services": 78,
+      "medicines": 49,
+      "diagnostics": 62
+    },
+    "center": [
+      7.51001,
+      12.23922
+    ],
+    "bounds": [
+      6.852,
+      11.12884,
+      9.04734,
+      13.35227
+    ]
+  },
+  {
+    "region": "Kebbi",
+    "access": 60,
+    "facilities": 59,
+    "communities": 33,
+    "referrals": 99,
+    "maternal": 35,
+    "medicine": 30,
+    "indicators": 1,
+    "readiness": {
+      "services": 68,
+      "medicines": 58,
+      "diagnostics": 65
+    },
+    "center": [
+      3.97938,
+      11.68268
+    ],
+    "bounds": [
+      3.475,
+      10.10058,
+      6.20443,
+      13.26443
+    ]
+  },
+  {
+    "region": "Kogi",
+    "access": 48,
+    "facilities": 39,
+    "communities": 43,
+    "referrals": 122,
+    "maternal": 48,
+    "medicine": 22,
+    "indicators": 2,
+    "readiness": {
+      "services": 77,
+      "medicines": 48,
+      "diagnostics": 54
+    },
+    "center": [
+      6.84632,
+      7.64828
+    ],
+    "bounds": [
+      5.3215,
+      6.55793,
+      7.80261,
+      8.73879
+    ]
+  },
+  {
+    "region": "Kwara",
+    "access": 73,
+    "facilities": 38,
+    "communities": 30,
+    "referrals": 125,
+    "maternal": 31,
+    "medicine": 40,
+    "indicators": 4,
+    "readiness": {
+      "services": 67,
+      "medicines": 79,
+      "diagnostics": 53
+    },
+    "center": [
+      4.57183,
+      9.08408
+    ],
+    "bounds": [
+      2.74296,
+      8.00767,
+      6.20854,
+      10.15667
+    ]
+  },
+  {
+    "region": "Lagos",
+    "access": 72,
+    "facilities": 21,
+    "communities": 26,
+    "referrals": 104,
+    "maternal": 26,
+    "medicine": 28,
+    "indicators": 2,
+    "readiness": {
+      "services": 75,
+      "medicines": 65,
+      "diagnostics": 69
+    },
+    "center": [
+      3.70866,
+      6.53445
+    ],
+    "bounds": [
+      2.69883,
+      6.36783,
+      4.36863,
+      6.70021
+    ]
+  },
+  {
+    "region": "Nasarawa",
+    "access": 52,
+    "facilities": 28,
+    "communities": 24,
+    "referrals": 66,
+    "maternal": 31,
+    "medicine": 37,
+    "indicators": 1,
+    "readiness": {
+      "services": 81,
+      "medicines": 63,
+      "diagnostics": 70
+    },
+    "center": [
+      8.18875,
+      8.5453
+    ],
+    "bounds": [
+      6.93463,
+      7.76618,
+      9.61753,
+      9.32925
+    ]
+  },
+  {
+    "region": "Niger",
+    "access": 47,
+    "facilities": 43,
+    "communities": 21,
+    "referrals": 134,
+    "maternal": 55,
+    "medicine": 21,
+    "indicators": 1,
+    "readiness": {
+      "services": 80,
+      "medicines": 79,
+      "diagnostics": 74
+    },
+    "center": [
+      5.71254,
+      9.78722
+    ],
+    "bounds": [
+      3.58194,
+      8.18301,
+      7.37865,
+      11.39063
+    ]
+  },
+  {
+    "region": "Ogun",
+    "access": 58,
+    "facilities": 51,
+    "communities": 42,
+    "referrals": 74,
+    "maternal": 81,
+    "medicine": 25,
+    "indicators": 2,
+    "readiness": {
+      "services": 75,
+      "medicines": 66,
+      "diagnostics": 50
+    },
+    "center": [
+      3.2657,
+      7.12293
+    ],
+    "bounds": [
+      2.70032,
+      6.29728,
+      4.60959,
+      7.95196
+    ]
+  },
+  {
+    "region": "Ondo",
+    "access": 81,
+    "facilities": 40,
+    "communities": 27,
+    "referrals": 113,
+    "maternal": 79,
+    "medicine": 20,
+    "indicators": 1,
+    "readiness": {
+      "services": 91,
+      "medicines": 49,
+      "diagnostics": 66
+    },
+    "center": [
+      4.86352,
+      6.81978
+    ],
+    "bounds": [
+      4.37612,
+      5.88774,
+      6.00413,
+      7.75025
+    ]
+  },
+  {
+    "region": "Osun",
+    "access": 83,
+    "facilities": 37,
+    "communities": 23,
+    "referrals": 120,
+    "maternal": 57,
+    "medicine": 51,
+    "indicators": 1,
+    "readiness": {
+      "services": 89,
+      "medicines": 67,
+      "diagnostics": 60
+    },
+    "center": [
+      4.53249,
+      7.54923
+    ],
+    "bounds": [
+      4.05293,
+      6.98073,
+      5.05763,
+      8.0955
+    ]
+  },
+  {
+    "region": "Oyo",
+    "access": 57,
+    "facilities": 55,
+    "communities": 49,
+    "referrals": 97,
+    "maternal": 60,
+    "medicine": 26,
+    "indicators": 4,
+    "readiness": {
+      "services": 70,
+      "medicines": 54,
+      "diagnostics": 54
+    },
+    "center": [
+      3.61608,
+      8.14476
+    ],
+    "bounds": [
+      2.69261,
+      7.0801,
+      4.569,
+      9.18831
+    ]
+  },
+  {
+    "region": "Plateau",
+    "access": 55,
+    "facilities": 44,
+    "communities": 32,
+    "referrals": 89,
+    "maternal": 51,
+    "medicine": 40,
+    "indicators": 1,
+    "readiness": {
+      "services": 85,
+      "medicines": 61,
+      "diagnostics": 55
+    },
+    "center": [
+      9.63052,
+      9.37549
+    ],
+    "bounds": [
+      8.55365,
+      8.36691,
+      10.64004,
+      10.38045
+    ]
+  },
+  {
+    "region": "Rivers",
+    "access": 71,
+    "facilities": 42,
+    "communities": 16,
+    "referrals": 73,
+    "maternal": 73,
+    "medicine": 20,
+    "indicators": 2,
+    "readiness": {
+      "services": 89,
+      "medicines": 75,
+      "diagnostics": 62
+    },
+    "center": [
+      6.82686,
+      4.9993
+    ],
+    "bounds": [
+      6.39839,
+      4.31195,
+      7.59061,
+      5.68993
+    ]
+  },
+  {
+    "region": "Sokoto",
+    "access": 49,
+    "facilities": 46,
+    "communities": 15,
+    "referrals": 67,
+    "maternal": 38,
+    "medicine": 31,
+    "indicators": 2,
+    "readiness": {
+      "services": 74,
+      "medicines": 54,
+      "diagnostics": 57
+    },
+    "center": [
+      5.21041,
+      12.70785
+    ],
+    "bounds": [
+      4.12489,
+      11.53031,
+      6.79277,
+      13.88571
+    ]
+  },
+  {
+    "region": "Taraba",
+    "access": 45,
+    "facilities": 37,
+    "communities": 31,
+    "referrals": 62,
+    "maternal": 34,
+    "medicine": 28,
+    "indicators": 4,
+    "readiness": {
+      "services": 75,
+      "medicines": 64,
+      "diagnostics": 58
+    },
+    "center": [
+      10.35785,
+      8.02266
+    ],
+    "bounds": [
+      9.11572,
+      6.43333,
+      11.8825,
+      9.61535
+    ]
+  },
+  {
+    "region": "Yobe",
+    "access": 65,
+    "facilities": 54,
+    "communities": 51,
+    "referrals": 88,
+    "maternal": 55,
+    "medicine": 44,
+    "indicators": 2,
+    "readiness": {
+      "services": 73,
+      "medicines": 53,
+      "diagnostics": 64
+    },
+    "center": [
+      11.54904,
+      11.97855
+    ],
+    "bounds": [
+      9.66199,
+      10.56763,
+      12.50392,
+      13.38912
+    ]
+  },
+  {
+    "region": "Zamfara",
+    "access": 75,
+    "facilities": 53,
+    "communities": 28,
+    "referrals": 135,
+    "maternal": 78,
+    "medicine": 32,
+    "indicators": 3,
+    "readiness": {
+      "services": 90,
+      "medicines": 65,
+      "diagnostics": 57
+    },
+    "center": [
+      5.99902,
+      12.07316
+    ],
+    "bounds": [
+      4.86075,
+      10.96364,
+      7.24657,
+      13.18245
+    ]
+  }
+]

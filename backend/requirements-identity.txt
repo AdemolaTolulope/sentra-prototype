@@ -1,0 +1,6 @@
+# Minimum runtime for the synthetic-only Milestone 1 backend.
+fastapi>=0.115,<1
+uvicorn[standard]>=0.30,<1
+pydantic>=2,<3
+httpx>=0.27,<1
+PyJWT[crypto]>=2.10,<3

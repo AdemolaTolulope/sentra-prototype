@@ -1,0 +1,45 @@
+import { useEffect, useMemo, useState } from 'react';
+import { ArrowRight, CheckCircle2, MapPinned, ShieldAlert } from 'lucide-react';
+import { useWorkspaceContext } from '../../components/WorkspaceContext';
+import { shortRegion } from '../../data/demo';
+import { GeoMap } from '../../geoaccess/components/GeoMap';
+import type { DemoFacility, GeoSelection, LayerState, LgaRecord, Settlement } from '../../geoaccess/data/types';
+import { useGeoData } from '../../geoaccess/hooks/useGeoData';
+import { defaultLayers } from '../../geoaccess/state';
+import { matchFacilities } from '../../reflex/engine/matching';
+import { useMamaSession } from '../data/MamaSession';
+import { canSimulate } from '../engine';
+import type { MamaTab, MaternalProfile } from '../types';
+import { Empty, ScopeNote, SectionHead } from './Common';
+import '../../geoaccess/geoaccess.css';
+
+const LAYERS:LayerState={...defaultLayers,population:false,settlements:false,facilities:true,mappedHealth:false};
+const NO_SETTLEMENTS:Settlement[]=[];const NO_LGAS:LgaRecord[]=[];const NO_FACILITIES:DemoFacility[]=[];const NO_GAPS=new Set<string>();
+type Props={profile:MaternalProfile|null;facilities:DemoFacility[];onGo:(tab:MamaTab)=>void};
+export default function Facilities({profile,facilities,onGo}:Props){
+ const {state,update}=useWorkspaceContext();const session=useMamaSession();const region=state.region;
+ const [lgaId,setLgaId]=useState(''),[selection,setSelection]=useState<GeoSelection>(null),[view3d,setView3d]=useState(false),[message,setMessage]=useState(''),[error,setError]=useState('');
+ const data=useGeoData(region,false,false,true,false);
+ const lgas=useMemo(()=>(data.lgaIndex.data??NO_LGAS).filter(l=>l.region===region).sort((a,b)=>a.name.localeCompare(b.name)),[data.lgaIndex.data,region]);const lga=lgas.find(l=>l.id===lgaId)??null;
+ const mapFacilities=useMemo(()=>(data.facilities.data??NO_FACILITIES).filter(f=>f.services.includes('Maternal care')&&(region==='Nigeria'||f.region===region)&&(!lgaId||f.lgaId===lgaId)),[data.facilities.data,region,lgaId]);
+ const origin=facilities.find(f=>f.id===profile?.originFacilityId)??null;
+ const candidates=useMemo(()=>matchFacilities(origin,'Maternal care',facilities).sort((a,b)=>a.distanceKm-b.distanceKm).slice(0,6),[origin,facilities]);
+ const chosen=selection?.kind==='facility'?selection.value:null;
+ useEffect(()=>{setLgaId('');setSelection(null);},[region]);
+ const selectPreference=(facility:DemoFacility)=>{if(!profile)return;try{session.setFacility(profile.id,facility.id,facilities);setMessage('Fictional preference saved in this session; it is not a suitability or availability assessment.');setError('');}catch(e){setError(e instanceof Error?e.message:'Could not save this example.');setMessage('');}};
+ const openGeo=(facility:DemoFacility)=>{update({region:facility.region});window.location.hash=`/geoaccess?tab=facility-explorer&facility=${encodeURIComponent(facility.id)}&from=mama-guard`;};
+ const mapStatus=[data.summary.status,data.states.status].includes('error')?'error':data.summary.status==='ready'&&data.states.status==='ready'?'ready':'loading';
+ const unavailable=[data.states,data.facilities,...(region==='Nigeria'?[]:[data.lgaShapes])].some(x=>x.status==='error');
+ return <div className="mg-stack"><div className="mg-workspace-intro"><div><span className="mg-kicker">DELIVERY & FACILITY INTELLIGENCE</span><h2>Geography with honest limits.</h2><p>Reuse the GEOACCESS map, fictional service tags and straight-line comparison—never a delivery suitability recommendation.</p></div><span className="mg-outline">NO READINESS DATA</span></div>
+  <div className="mg-method-note"><ShieldAlert size={15}/><span>Every facility, location and service tag is synthetic. A maternal or emergency tag does not establish current capability, equipment, staffing, bed capacity or availability. Do not use these examples to choose real care.</span></div>
+  {(message||error)&&<div className={error?'mg-error':'mg-success'} role={error?'alert':'status'}>{error||message}</div>}
+  {unavailable&&<div className="mg-error" role="status">Some geographic files are unavailable{navigator.onLine?'':' offline'}. Previously visited files may still load.</div>}
+  <div className="mg-map-layout"><div className="mg-map"><GeoMap region={region} lga={lga} onRegion={name=>update({region:name})} onLga={id=>{setLgaId(id);const found=lgas.find(l=>l.id===id);setSelection(found?{kind:'lga',value:found}:null);}} selection={selection} onSelect={setSelection} focusFacility={chosen} layers={LAYERS} facilities={mapFacilities} settlements={NO_SETTLEMENTS} outsideIds={NO_GAPS} radiusKm={25} lgaShapes={data.lgaShapes.data} wardShapes={null} states={data.states.data} summary={data.summary.data} raster={data.raster.data} showDemoMarkers={state.showDemoMarkers} dataStatus={mapStatus} view3d={view3d} onView3d={setView3d} scenarioActive={false} show3dPoints pickingSite={false} onPickSite={()=>{}}/></div>
+  <aside className="mg-panel mg-map-context"><SectionHead eyebrow="GEOACCESS · SHARED MAP" title="Inspect a fictional place" description="Green markers show fictional facilities with a maternal-care tag."/><label className="mg-field">Map LGA<select aria-label="Facility map LGA" value={lgaId} disabled={region==='Nigeria'} onChange={e=>{setLgaId(e.target.value);setSelection(null);}}><option value="">{region==='Nigeria'?'Choose a state in shared geography':'All LGAs'}</option>{lgas.map(l=><option key={l.id} value={l.id}>{l.name}</option>)}</select></label><label className="mg-field">Fictional facility<select aria-label="Inspect fictional maternal facility" value={chosen?.id??''} onChange={e=>{const f=mapFacilities.find(x=>x.id===e.target.value);setSelection(f?{kind:'facility',value:f}:null);}}><option value="">Choose an example</option>{mapFacilities.map(f=><option key={f.id} value={f.id}>{f.name}</option>)}</select></label>{!state.showDemoMarkers&&<button className="mg-text-button" onClick={()=>update({showDemoMarkers:true})}>Show fictional markers <ArrowRight size={12}/></button>}
+   <div className="mg-facility-detail"><span className="mg-kicker">{chosen?'SELECTED FACILITY':'MAP SELECTION'}</span><strong>{chosen?.name??`${mapFacilities.length} matching fictional ${mapFacilities.length===1?'facility':'facilities'}`}</strong>{chosen?<><small>{shortRegion(chosen.region)} · {chosen.lgaName??'LGA unknown'} · {chosen.category}</small><dl><div><dt>Source</dt><dd>{chosen.source}</dd></div><div><dt>Verification</dt><dd>Synthetic</dd></div><div><dt>Maternal tag</dt><dd>Fictional only</dd></div><div><dt>Last updated</dt><dd>Unknown</dd></div><div><dt>Availability</dt><dd>Unknown</dd></div></dl><div className="mg-actions"><button className="mg-secondary" disabled={!profile||!canSimulate(session.role,'facility')} onClick={()=>selectPreference(chosen)}>Use as fictional preference</button><button className="mg-text-button" onClick={()=>openGeo(chosen)}>Inspect in GEOACCESS <ArrowRight size={12}/></button></div></>:<small>Pick a marker or use the selector. No operational data are available.</small>}</div>
+   <p className="mg-muted">In 3D, optional terrain is a bare-earth elevation model and mapped building heights are approximate. Neither shows healthcare access or facility readiness.</p></aside></div>
+  <section className="mg-panel"><SectionHead eyebrow="EXPLAINABLE DEMONSTRATION COMPARISON" title="Other fictional maternal-tag examples" description={origin?`Sorted by straight-line distance from ${origin.name} (the fictional origin), not from a patient.`:'Select a synthetic profile to compare facilities.'} action={<MapPinned size={17}/>}/>
+   {profile&&origin?candidates.length?<div className="mg-candidate-list">{candidates.map(({facility,distanceKm})=><article key={facility.id}><span className="mg-facility-icon"><MapPinned size={15}/></span><div><strong>{facility.name}</strong><small>{shortRegion(facility.region)} · maternal-care tag is fictional · availability unknown</small></div><span className="mg-distance">{distanceKm.toFixed(1)} km <small>straight-line</small></span><button className="mg-secondary" disabled={!canSimulate(session.role,'facility')} onClick={()=>selectPreference(facility)}>{profile.preferredFacilityId===facility.id?<><CheckCircle2 size={13}/> Selected</>:'Choose example'}</button><button className="mg-text-button" onClick={()=>openGeo(facility)}>Map <ArrowRight size={12}/></button></article>)}</div>:<Empty title="No comparable examples">No other fictional maternal-tag facilities match the current synthetic origin.</Empty>:<Empty title="No example selected">Choose a profile with a fictional origin. Operations view does not show profile-level comparisons.</Empty>}
+   <p className="mg-footnote">Candidate eligibility reuses REFLEX matching and GEOACCESS distance; this list is sorted by distance only. The origin is excluded. Straight-line distance is not road distance or travel time. No capability, emergency obstetric care, newborn care or readiness is verified.</p></section><ScopeNote onGo={onGo}/>
+ </div>;
+}
