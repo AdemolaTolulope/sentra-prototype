@@ -1,5 +1,7 @@
 # senTRA — Stage 4.5 geospatial upgrade handover
 
+> Historical geospatial handover. The [project overview](README.md) and [technical reference](docs/PROJECT-REFERENCE.md) provide the current repository introduction and safety boundaries.
+
 **Deliverable:** a separately previewed upgrade of the existing senTRA prototype, retaining GEOACCESS, REFLEX, MAMA-GUARD and the platform workspaces. The historical [architecture audit and plan](docs/STAGE4.5-AUDIT-PLAN.md) describes the pre-upgrade baseline; this handover describes what was implemented. The later [satellite and globe visual update](HANDOVER-SATELLITE-MAP.md) adds optional imagery, provider controls and a no-detail fallback; its description supersedes this document where they differ.
 
 > **Demonstration only. Never enter real patient information.** This is not an operational digital twin, a healthcare facility directory, an emergency service, a routing system or a validated clinical/public-health tool. Fictional facility examples, service tags, referrals and access calculations must not be used to choose care or allocate resources. An OpenStreetMap health point is unverified and does not establish that a facility is open, equipped or appropriate.
